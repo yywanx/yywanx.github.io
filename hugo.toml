@@ -1,0 +1,116 @@
+baseURL = "https://yywanx.github.io/"
+languageCode = "en-us"
+title = "Yangyue Wan Blog"
+theme = "PaperMod"
+
+hasCJKLanguage = true
+enableRobotsTXT = true
+enableEmoji = true
+
+[pagination]
+pagerSize = 5
+
+[permalinks]
+posts = "/posts/:slug/"
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[[menu.main]]
+name = "Posts"
+url = "/posts/"
+weight = 10
+
+[[menu.main]]
+name = "Archives"
+url = "/archives/"
+weight = 20
+
+[[menu.main]]
+name = "Search"
+url = "/search/"
+weight = 30
+
+[[menu.main]]
+name = "Tags"
+url = "/tags/"
+weight = 40
+
+[[menu.main]]
+name = "About"
+url = "/about/"
+weight = 50
+
+
+# ============================================================
+# PaperMod configuration
+# ============================================================
+
+[params]
+
+env = "production"
+
+author = "Yangyue Wan"
+description = "Notes on machine learning, generative models, systems, and other things."
+
+defaultTheme = "auto"
+disableThemeToggle = false
+
+# Only treat content/posts as the main blog section
+mainSections = ["posts"]
+
+# Post metadata / navigation
+ShowReadingTime = true
+ShowBreadCrumbs = true
+ShowPostNavLinks = true
+
+# Table of contents
+ShowToc = true
+TocOpen = false
+
+# Code blocks
+ShowCodeCopyButtons = true
+
+# Math is supported, but disabled by default
+math = false
+
+
+# ============================================================
+# Code syntax highlighting
+# ============================================================
+
+[params.assets]
+disableHLJS = true
+
+[markup.highlight]
+codeFences = true
+guessSyntax = false
+lineNos = false
+noClasses = false
+
+
+# ============================================================
+# Table of contents
+# ============================================================
+
+[markup.tableOfContents]
+startLevel = 2
+endLevel = 4
+ordered = false
+
+
+# ============================================================
+# LaTeX / Math passthrough
+# ============================================================
+
+[markup.goldmark.extensions.passthrough]
+enable = true
+
+[markup.goldmark.extensions.passthrough.delimiters]
+block = [['\[', '\]'], ['$$', '$$']]
+inline = [['\(', '\)']]

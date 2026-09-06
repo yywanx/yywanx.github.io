@@ -1,0 +1,8 @@
+# Hugo generated files
+/public/
+/resources/_gen/
+/.hugo_build.lock
+/hugo_stats.json
+
+# macOS
+.DS_Store
