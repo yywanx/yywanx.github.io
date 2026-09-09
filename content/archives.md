@@ -1,5 +1,5 @@
-+++
-title = "Archives"
-layout = "archives"
-url = "/archives/"
-+++
+---
+title: "Archives"
+layout: "archives"
+url: "/archives/"
+---

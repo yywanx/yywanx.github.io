@@ -1,6 +1,6 @@
-+++
-title = "Search"
-layout = "search"
-url = "/search/"
-placeholder = "Search posts..."
-+++
+---
+title: "Search"
+layout: "search"
+url: "/search/"
+placeholder: "Search posts..."
+---
