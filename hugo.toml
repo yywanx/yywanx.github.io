@@ -1,6 +1,6 @@
 baseURL = "https://yywanx.github.io/"
-languageCode = "en-us"
-title = "Yangyue Wan Blog"
+locale = "en-us"
+title = "Yangyue Wan"
 theme = "PaperMod"
 
 hasCJKLanguage = true
@@ -58,27 +58,30 @@ env = "production"
 author = "Yangyue Wan"
 description = "Notes on machine learning, generative models, systems, and other things."
 
-defaultTheme = "auto"
-disableThemeToggle = false
+defaultTheme = "light"
+disableThemeToggle = true
 
 # Only treat content/posts as the main blog section
 mainSections = ["posts"]
+
+# Keep the homepage a compact post list without an introductory block.
+disableSpecial1stPost = true
 
 # Post metadata / navigation
 ShowReadingTime = true
 ShowBreadCrumbs = true
 ShowPostNavLinks = true
+hideAuthor = true
 
 # Table of contents
 ShowToc = true
-TocOpen = false
+# The site's custom TOC layout is always expanded.
 
 # Code blocks
 ShowCodeCopyButtons = true
 
 # Math is supported, but disabled by default
 math = false
-
 
 # ============================================================
 # Code syntax highlighting

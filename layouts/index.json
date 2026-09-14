@@ -1,0 +1,27 @@
+{{- /* Preserve PaperMod's search fields and include the custom About content. */ -}}
+{{- $index := slice -}}
+{{- range site.RegularPages -}}
+  {{- if and (not .Params.searchHidden) (ne .Layout "archives") (ne .Layout "search") -}}
+    {{- $content := .Plain -}}
+    {{- if eq .Layout "about" -}}
+      {{- $parts := slice $content -}}
+      {{- with .Params.profile -}}
+        {{- $parts = $parts | append .name .tagline .introduction .focus -}}
+      {{- end -}}
+      {{- range .Params.timeline -}}
+        {{- $parts = $parts | append .period .organization .description -}}
+        {{- with .subtitle -}}
+          {{- $parts = $parts | append . -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if ne .Params.showProjects false -}}
+        {{- range .Params.projects -}}
+          {{- $parts = $parts | append .title .description -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $content = delimit $parts "\n" -}}
+    {{- end -}}
+    {{- $index = $index | append (dict "title" .Title "content" $content "permalink" .Permalink "summary" .Summary) -}}
+  {{- end -}}
+{{- end -}}
+{{- $index | jsonify -}}

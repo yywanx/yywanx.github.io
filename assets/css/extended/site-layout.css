@@ -1,0 +1,12 @@
+/* Use one reading column and header position throughout the site. */
+:root {
+    --main-width: 800px;
+    --nav-width: var(--main-width);
+    --toc-width: 220px;
+    --toc-gap: 24px;
+}
+
+/* Give a homepage that starts directly with post cards room below the header. */
+body.list > .main:has(> .post-entry:first-child) {
+    padding-top: clamp(32px, 4vw, 56px);
+}

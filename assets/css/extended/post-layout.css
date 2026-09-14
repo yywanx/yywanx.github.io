@@ -1,0 +1,84 @@
+/* PaperMod loads site CSS from this directory after its own styles. */
+.post-toc {
+    margin-bottom: var(--content-gap);
+}
+
+.post-toc .toc {
+    padding: 18px 20px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--code-bg);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.post-toc h2 {
+    margin-bottom: 12px;
+    color: var(--primary);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.post-toc ul {
+    list-style: none;
+    padding: 0;
+}
+
+.post-toc ul ul {
+    padding-inline-start: 14px;
+}
+
+.post-toc a {
+    display: block;
+    padding: 4px 0;
+    color: var(--secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post-toc a:hover,
+.post-toc a:focus-visible {
+    color: var(--primary);
+}
+
+.post-toc .toc:focus-visible,
+.post-toc a:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+
+.post-content :is(h2, h3, h4, h5, h6) {
+    scroll-margin-top: 24px;
+}
+
+/* Fit the TOC in the right margin without moving the centered reading column.
+   Allow room for 800px of content, two 244px gutters, and viewport padding. */
+@media screen and (min-width: 1440px) {
+    .post-single:has(> .post-toc) {
+        position: relative;
+    }
+
+    .post-toc {
+        position: absolute;
+        inset-block: 0;
+        inset-inline-start: calc(100% + var(--toc-gap));
+        width: var(--toc-width);
+        margin: 0;
+    }
+
+    .post-toc .toc {
+        position: sticky;
+        top: 24px;
+        max-height: calc(100vh - 48px);
+        max-height: calc(100dvh - 48px);
+        overflow-y: auto;
+        scrollbar-width: thin;
+    }
+}
+
+@media print {
+    .post-toc {
+        display: none;
+    }
+}

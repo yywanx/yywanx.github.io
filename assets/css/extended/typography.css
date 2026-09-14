@@ -1,0 +1,4 @@
+/* Use Georgia throughout the site; code retains its monospace styling. */
+body {
+    font-family: Georgia, "Times New Roman", serif;
+}

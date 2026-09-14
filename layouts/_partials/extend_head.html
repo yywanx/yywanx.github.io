@@ -1,3 +1,10 @@
 {{- if .Param "math" -}}
   {{- partialCached "math.html" . -}}
 {{- end -}}
+
+{{- /* Let individual pages opt into the list-page background. */ -}}
+{{- if eq (.Param "pageBackground") "list" -}}
+<style>
+  body { background: var(--code-bg); }
+</style>
+{{- end -}}

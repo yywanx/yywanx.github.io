@@ -1,0 +1,66 @@
+{{ define "main" }}
+<div class="about-page">
+  {{ with .Params.profile }}
+  <header class="about-profile">
+    <img class="about-portrait" src="{{ .image | relURL }}" alt="{{ .imageAlt }}" width="220" height="220">
+    <div class="about-profile-copy">
+      <h1>{{ .name }}</h1>
+      <p class="about-tagline">{{ .tagline }}</p>
+      <ul class="about-socials" aria-label="Personal links">
+        {{ range .links }}
+        <li>
+          <a href="{{ .url | relURL }}" aria-label="{{ .label }}" title="{{ .label }}">
+            <span aria-hidden="true">
+              {{ partial "svg.html" (dict "name" .icon) }}
+            </span>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+  </header>
+  {{ end }}
+  <hr class="about-divider">
+  {{ with .Params.profile }}
+  <section class="about-section" aria-labelledby="about-bio">
+    <h2 id="about-bio">Short Bio</h2>
+    <p>{{ .introduction }} {{ .focus }}</p>
+  </section>
+  {{ end }}
+  {{ with .Params.timeline }}
+  <section class="about-history" aria-label="Career and education timeline">
+    <ol class="about-timeline">
+      {{ range . }}
+      <li>
+        <p class="about-period">{{ .period }}</p>
+        <div class="about-timeline-mark"><img src="{{ .logo | relURL }}" alt="" width="64" height="64"></div>
+        <div class="about-history-copy">
+          <h2>{{ .organization }}</h2>
+          {{ with .subtitle }}<p class="about-timeline-subtitle">{{ . }}</p>{{ end }}
+          <p>{{ .description }}</p>
+        </div>
+      </li>
+      {{ end }}
+    </ol>
+  </section>
+  {{ end }}
+  {{ with .Content }}
+  <section class="about-section" aria-labelledby="about-other"><h2 id="about-other">Beyond Work</h2>{{ . }}</section>
+  {{ end }}
+  {{ if ne .Params.showProjects false }}
+  {{ with .Params.projects }}
+  <section class="about-section" aria-labelledby="about-projects">
+    <h2 id="about-projects">Pet Projects</h2>
+    <ul class="about-projects">
+      {{ range . }}
+      <li>
+        <img src="{{ .image | relURL }}" alt="{{ .imageAlt }}" width="152" height="104" loading="lazy">
+        <div><h3>{{ .title }}</h3><p>{{ .description }}</p></div>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+  {{ end }}
+</div>
+{{ end }}

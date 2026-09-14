@@ -1,0 +1,172 @@
+/* Personal-page layout: portrait header, logo timeline, and illustrated projects. */
+.about-page {
+    --about-link: #245ab4;
+    --about-line: #d0d0d0;
+    padding: 20px 0 50px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--content);
+}
+.about-profile {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 310px);
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    padding: 8px 0 24px;
+}
+.about-portrait {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.about-profile h1 {
+    font-size: 34px;
+    line-height: 1.15;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+}
+.about-tagline {
+    margin-top: 12px;
+    color: var(--secondary);
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.45;
+}
+.about-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 17px;
+    list-style: none;
+}
+.about-socials a {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--theme);
+}
+.about-socials span, .about-socials svg {
+    display: block;
+    width: 23px;
+    height: 23px;
+}
+.about-socials a:hover { background: var(--about-link); }
+.about-page a:focus-visible { outline: 2px solid var(--about-link); outline-offset: 4px; }
+.about-divider {
+    height: 1px;
+    margin: 24px 0 32px;
+    border: 0;
+    background: linear-gradient(to right, transparent, var(--about-line) 15%, var(--about-line) 85%, transparent);
+}
+.about-timeline, .about-projects { list-style: none; }
+.about-history { margin-top: 32px; }
+.about-timeline > li {
+    display: grid;
+    grid-template-columns: 104px 88px minmax(0, 1fr);
+}
+.about-period {
+    padding: 1px 12px 0 0;
+    color: var(--secondary);
+    font-size: 12px;
+    text-align: right;
+}
+.about-timeline-mark {
+    position: relative;
+    padding-inline-start: 12px;
+    border-inline-start: 2px solid var(--about-line);
+}
+.about-timeline-mark::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    inset-inline-start: -6px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--code-bg);
+    border-radius: 50%;
+    background: var(--about-line);
+}
+.about-timeline-mark img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+.about-history-copy { padding: 0 0 30px 12px; }
+.about-history-copy h2 {
+    margin-bottom: 6px;
+    color: var(--about-link);
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+.about-timeline-subtitle {
+    margin-bottom: 8px;
+    color: var(--secondary);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+.about-section { margin-top: 30px; }
+.about-section > h2 {
+    margin-bottom: 18px;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.about-section > p + p { margin-top: 14px; }
+.about-projects > li {
+    display: grid;
+    grid-template-columns: 152px minmax(0, 1fr);
+    gap: 18px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--about-line);
+}
+.about-projects img {
+    width: 152px;
+    height: 104px;
+    border: 1px solid var(--about-line);
+    border-radius: 5px;
+    object-fit: cover;
+}
+.about-projects h3 {
+    margin-bottom: 6px;
+    font-size: 17px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+@media screen and (max-width: 600px) {
+    .about-page { padding-top: 12px; font-size: 15px; }
+    .about-profile {
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: center;
+        gap: 22px;
+        text-align: center;
+    }
+    .about-portrait { width: 176px; height: 176px; }
+    .about-profile-copy { max-width: 310px; }
+    .about-socials { justify-content: center; }
+    .about-timeline { padding-inline-start: 0; }
+    .about-timeline > li { grid-template-columns: 56px minmax(0, 1fr); }
+    .about-period {
+        grid-column: 2;
+        grid-row: 1;
+        padding: 0 0 5px 8px;
+        font-size: 11px;
+        text-align: start;
+    }
+    .about-timeline-mark {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        padding-inline-start: 8px;
+    }
+    .about-timeline-mark img { width: 40px; height: 40px; }
+    .about-history-copy { grid-column: 2; grid-row: 2; padding-inline-start: 8px; }
+    .about-projects > li { grid-template-columns: 94px minmax(0, 1fr); gap: 12px; }
+    .about-projects img { width: 94px; height: 78px; }
+}

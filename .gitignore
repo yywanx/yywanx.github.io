@@ -6,3 +6,7 @@
 
 # macOS
 .DS_Store
+
+# Local conversation exports and working notes (never published)
+/docs/
+/.local-notes/

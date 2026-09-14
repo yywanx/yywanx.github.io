@@ -1,0 +1,16 @@
+{{- /* Use Hugo's configured heading levels and omit empty tables of contents. */ -}}
+{{- if findRE `<a\s` .TableOfContents -}}
+{{- $toc := .TableOfContents -}}
+{{- /* Keep the full heading available when a link is visually truncated. */ -}}
+{{- range findRE `<a\s[^>]*>.*?</a>` $toc -}}
+  {{- $title := . | plainify | htmlUnescape | htmlEscape -}}
+  {{- $link := replace . "<a " (printf `<a title="%s" ` $title) -}}
+  {{- $toc = replace $toc . $link -}}
+{{- end -}}
+<aside class="post-toc" aria-labelledby="toc-title">
+  <div class="toc" tabindex="0">
+    <h2 id="toc-title">{{ i18n "toc" | default "Table of Contents" }}</h2>
+    {{ $toc | safeHTML }}
+  </div>
+</aside>
+{{- end -}}
