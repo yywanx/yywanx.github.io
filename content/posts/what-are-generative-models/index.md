@@ -2,7 +2,7 @@
 title: 'What Are Generative Models?'
 slug: 'what-are-generative-models'
 date: '2026-09-09T17:26:08-07:00'
-draft: true
+draft: false
 description: ''
 categories: ['Machine Learning', 'AI']
 tags: ['Generative Models', 'Flow Matching', 'Diffusion Models']
