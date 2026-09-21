@@ -52,6 +52,11 @@
     scroll-margin-top: 24px;
 }
 
+/* Keep the flow matching diagrams centered, including narrower SVGs. */
+.post-content img[src*="/flow-matching-from-noise-to-data/images/"] {
+    margin-inline: auto;
+}
+
 /* Fit the TOC in the right margin without moving the centered reading column.
    Allow room for 800px of content, two 244px gutters, and viewport padding. */
 @media screen and (min-width: 1440px) {
