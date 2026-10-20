@@ -2,10 +2,10 @@
 title: 'Working in Latent Space'
 slug: 'working-in-latent-space'
 date: '2026-10-19T09:54:45-07:00'
-draft: true
+draft: false
 description: ''
 categories: ['Machine Learning', 'AI']
-tags: ['Generative Models', 'Flow Matching', 'Diffusion Models', 'Variational Autoencoders']
+tags: ['Generative Models', 'Flow Matching', 'Diffusion Models', 'Variational Autoencoders', 'VAE', 'Latent Space']
 series: ['Flow Matching and Diffusion Models']
 math: true
 ---
