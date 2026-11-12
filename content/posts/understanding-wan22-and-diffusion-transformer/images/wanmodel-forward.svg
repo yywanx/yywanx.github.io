@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="960" viewBox="0 0 800 960" role="img" aria-labelledby="title desc">
+<title id="title">Inside WanModel.forward</title><desc id="desc">Patch embedding flattens the latent into N tokens of D features. Thirty blocks use text context and timestep modulation. The head predicts patch velocities; unpatchify restores 48 by 31 by 44 by 80.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker></defs>
+<rect width="800" height="960" fill="#fff"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#1e293b" text-anchor="middle">
+<text x="400" y="35" font-size="25" fill="#1e293b" font-weight="600">WanModel.forward · one DiT call</text>
+<text x="400" y="65" font-size="19" fill="#64748b" font-weight="400">B = 1 · N = 27,280 · D = 3,072</text>
+<rect x="50" y="105" width="390" height="65" rx="9" fill="#fff2dd" stroke="#cc862b" stroke-width="1.5"/>
+<text x="245" y="133" font-size="20" fill="#1e293b" font-weight="600">Latent: [48, 31, 44, 80]</text>
+<rect x="50" y="220" width="390" height="90" rx="9" fill="#e9f2fb" stroke="#377eb8" stroke-width="1.5"/>
+<text x="245" y="248" font-size="20" fill="#1e293b" font-weight="600">Conv3d · patch (1, 2, 2)</text>
+<text x="245" y="274" font-size="18" fill="#1e293b" font-weight="400">[1, 3072, 31, 22, 40]</text>
+<path d="M245 170V220" fill="none" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="340" y="199" font-size="16" fill="#64748b" font-weight="400">Add batch axis</text>
+<rect x="50" y="360" width="390" height="65" rx="9" fill="#e9f2fb" stroke="#377eb8" stroke-width="1.5"/>
+<text x="245" y="388" font-size="20" fill="#1e293b" font-weight="600">Flatten → [1, N, D]</text>
+<path d="M245 310V360" fill="none" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="50" y="510" width="390" height="90" rx="9" fill="#e9f2fb" stroke="#377eb8" stroke-width="1.5"/>
+<text x="245" y="538" font-size="20" fill="#1e293b" font-weight="600">30 WanAttentionBlocks</text>
+<text x="245" y="564" font-size="18" fill="#1e293b" font-weight="400">[1, N, D] → [1, N, D]</text>
+<path d="M245 425V510" fill="none" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="50" y="705" width="390" height="90" rx="9" fill="#e9f2fb" stroke="#377eb8" stroke-width="1.5"/>
+<text x="245" y="733" font-size="20" fill="#1e293b" font-weight="600">Head: normalize + linear</text>
+<text x="245" y="759" font-size="18" fill="#1e293b" font-weight="400">[1, N, D] → [1, N, 192]</text>
+<path d="M245 600V705" fill="none" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="50" y="845" width="390" height="85" rx="9" fill="#fff2dd" stroke="#cc862b" stroke-width="1.5"/>
+<text x="245" y="873" font-size="20" fill="#1e293b" font-weight="600">Unpatchify → velocity</text>
+<text x="245" y="899" font-size="18" fill="#1e293b" font-weight="400">[48, 31, 44, 80]</text>
+<path d="M245 795V845" fill="none" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="490" y="105" width="270" height="85" rx="9" fill="#edf7f0" stroke="#56856b" stroke-width="1.5"/>
+<text x="625" y="133" font-size="20" fill="#1e293b" font-weight="600">Text embeddings</text>
+<text x="625" y="159" font-size="18" fill="#1e293b" font-weight="400">[L, 4096]</text>
+<rect x="490" y="240" width="270" height="90" rx="9" fill="#edf7f0" stroke="#56856b" stroke-width="1.5"/>
+<text x="625" y="268" font-size="20" fill="#1e293b" font-weight="600">Pad + text projection</text>
+<text x="625" y="294" font-size="18" fill="#1e293b" font-weight="400">[1, 512, D]</text>
+<path d="M625 190V240" fill="none" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M760 285H780V350H465V480H420V510" fill="none" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="490" y="375" width="270" height="65" rx="9" fill="#fff2dd" stroke="#cc862b" stroke-width="1.5"/>
+<text x="625" y="403" font-size="20" fill="#1e293b" font-weight="600">Timestep t: [1, N]</text>
+<rect x="490" y="490" width="270" height="115" rx="9" fill="#fff2dd" stroke="#cc862b" stroke-width="1.5"/>
+<text x="625" y="518" font-size="20" fill="#1e293b" font-weight="600">Sinusoidal + networks</text>
+<text x="625" y="544" font-size="18" fill="#1e293b" font-weight="400">e: [1, N, D]</text>
+<text x="625" y="568" font-size="18" fill="#1e293b" font-weight="400">e0: [1, N, 6, D]</text>
+<path d="M625 440V490" fill="none" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+<path d="M490 535H440" fill="none" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="465" y="520" font-size="16" fill="#995c12" font-weight="400">e0</text>
+<path d="M625 605V750H440" fill="none" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="650" y="684" font-size="18" fill="#995c12" font-weight="400">e</text>
+<text x="625" y="851" font-size="18" fill="#64748b" font-weight="400">192 values per patch</text>
+<text x="625" y="878" font-size="18" fill="#64748b" font-weight="400">= 48 × 1 × 2 × 2</text>
+</g></svg>

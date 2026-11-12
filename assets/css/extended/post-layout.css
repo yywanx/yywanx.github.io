@@ -57,6 +57,14 @@
     margin-inline: auto;
 }
 
+/* Keep the Wan post's diagrams compact and centered. */
+.post-content img[src*="/understanding-wan22-and-diffusion-transformer/images/"] {
+    width: 640px;
+    max-width: 100%;
+    height: auto;
+    margin-inline: auto;
+}
+
 /* Fit the TOC in the right margin without moving the centered reading column.
    Allow room for 800px of content, two 244px gutters, and viewport padding. */
 @media screen and (min-width: 1440px) {
