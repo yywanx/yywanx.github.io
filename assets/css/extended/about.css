@@ -21,6 +21,16 @@
     border-radius: 50%;
     object-fit: cover;
 }
+.about-portrait-figure {
+    margin: 0;
+    text-align: center;
+}
+.about-portrait-note {
+    margin-top: 8px;
+    color: var(--secondary);
+    font-size: 13px;
+    font-style: italic;
+}
 .about-profile h1 {
     font-size: 34px;
     line-height: 1.15;

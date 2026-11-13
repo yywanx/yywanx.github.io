@@ -10,9 +10,10 @@ profile:
   name: "Yangyue Wan"
   image: "/about/photo.jpeg"
   imageAlt: "Portrait of Yangyue Wan"
+  imageNote: "AI-generated, but still me."
   tagline: "I like building learning systems and understanding how they work."
-  introduction: "I'm a machine learning engineer working on generative models, with a focus on scalable methods for image and video generation. I'm also interested in decision making systems."
-  focus: "Lately, I've been exploring how generative models can support planning and decision making in complex environments for robotics."
+  introduction: "I'm a machine learning engineer working on generative models, with a focus on scalable methods for image and video generation."
+  focus: "Lately, I've been exploring how generative models can support reasoning and decision making in complex environments, as well as efficient methods for training and inference."
   links:
     - label: "Google Scholar"
       icon: "googlescholar"
@@ -28,22 +29,22 @@ timeline:
   - period: "2026 — present"
     logo: "/about/lab-mark.svg"
     organization: "Independent Research (Part-time)"
-    description: "Exploring generative models especially video generation for robotics."
+    description: "Exploring video generation, visual reasoning, multimodal foundation models, RL post-training, and ML infra to support them."
   - period: "2023 — present"
     logo: "/about/uber.png"
     organization: "Uber Marketplace"
     subtitle: "ML Engineer"
-    description: "Joined Uber to work on some fun stuff incorporating ML into real-time decision systems."
+    description: "Joined Uber to work on some fun stuff combining ML/RL, optimization, economics into real-time decision systems."
   - period: "2018 — 2023"
     logo: "/about/bytedance.png"
     organization: "ByteDance AI Lab"
     subtitle: "Research Engineer"
-    description: "Image/video editing and generation R&D in the early days of ByteDance AI Lab. Some of my work became top-tier features on Douyin and TikTok!"
+    description: "Image/video editing and generation in the early days of ByteDance AI Lab. Some of my work became top-tier features on Douyin and TikTok!"
   - period: "2017 — 2018"
     logo: "/about/afanta.jpeg"
     organization: "AFanta"
     subtitle: "Research Engineer"
-    description: "I joined a startup to work on DL and CV after graduation and built everything from scratch (GPU servers to model training). Good times!"
+    description: "I joined a startup to work on DL and CV after graduation and built everything from scratch (from GPU servers to model training). Good times!"
   - period: "2015 — 2017"
     logo: "/about/UCSD.svg.webp"
     organization: "University of California San Diego"
@@ -57,8 +58,6 @@ timeline:
 
 ---
 
-Outside of AI/ML, I like playing guitar and listening to music. Some of my favorites are Pink Floyd, Queen, Eric Clapton, Bill Evans, Omnipotent Youth Society (万能青年旅店), Cheer Chen (陈绮贞), Liang Bo (梁博) and Zhao Lei (赵雷).
-
-I'm also an amateur Olympic weightlifter, and a fan of weightlifters including Lü Xiaojun (吕小军), Li Dayin (李大银), Shi Zhiyong (石智勇) and Tian Tao (田涛).
+Outside of AI/ML, I like playing guitar and listening to music. I'm also an amateur Olympic weightlifter.
 
 When I'm doing neither, you'll probably find me cooking or working on home DIY projects.

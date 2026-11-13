@@ -2,7 +2,10 @@
 <div class="about-page">
   {{ with .Params.profile }}
   <header class="about-profile">
-    <img class="about-portrait" src="{{ .image | relURL }}" alt="{{ .imageAlt }}" width="220" height="220">
+    <figure class="about-portrait-figure">
+      <img class="about-portrait" src="{{ .image | relURL }}" alt="{{ .imageAlt }}" width="220" height="220">
+      {{ with .imageNote }}<figcaption class="about-portrait-note">{{ . }}</figcaption>{{ end }}
+    </figure>
     <div class="about-profile-copy">
       <h1>{{ .name }}</h1>
       <p class="about-tagline">{{ .tagline }}</p>
