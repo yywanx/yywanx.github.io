@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
+<title id="title">Bidirectional and chunk-causal attention</title><desc id="desc">Two 4-by-4 grids of chunks. Rows are queries and columns are keys. In the bidirectional mask every cell is allowed. In the chunk-causal mask a chunk can attend to itself and earlier chunks only, giving a lower-triangular block pattern.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker></defs>
+<rect width="800" height="520" fill="#fff"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#1e293b" text-anchor="middle">
+<text x="400" y="35" font-size="25" fill="#1e293b" font-weight="600">Self-attention masks over 4 chunks</text>
+<text x="400" y="64" font-size="18" fill="#64748b" font-weight="400">Rows: query chunk · Columns: key chunk · Filled: allowed</text>
+<text x="223.0" y="110" font-size="21" fill="#1e293b" font-weight="600">Bidirectional</text>
+<text x="223.0" y="134" font-size="17" fill="#64748b" font-weight="400">Wan2.2</text>
+<text x="75" y="188.0" font-size="16" fill="#64748b" font-weight="400">C0</text>
+<text x="127.0" y="430" font-size="16" fill="#64748b" font-weight="400">C0</text>
+<rect x="95" y="150" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="159" y="150" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="223" y="150" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="287" y="150" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<text x="75" y="252.0" font-size="16" fill="#64748b" font-weight="400">C1</text>
+<text x="191.0" y="430" font-size="16" fill="#64748b" font-weight="400">C1</text>
+<rect x="95" y="214" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="159" y="214" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="223" y="214" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="287" y="214" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<text x="75" y="316.0" font-size="16" fill="#64748b" font-weight="400">C2</text>
+<text x="255.0" y="430" font-size="16" fill="#64748b" font-weight="400">C2</text>
+<rect x="95" y="278" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="159" y="278" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="223" y="278" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="287" y="278" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<text x="75" y="380.0" font-size="16" fill="#64748b" font-weight="400">C3</text>
+<text x="319.0" y="430" font-size="16" fill="#64748b" font-weight="400">C3</text>
+<rect x="95" y="342" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="159" y="342" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="223" y="342" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="287" y="342" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="95" y="150" width="256" height="256" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="603.0" y="110" font-size="21" fill="#1e293b" font-weight="600">Chunk-causal</text>
+<text x="603.0" y="134" font-size="17" fill="#64748b" font-weight="400">LongLive</text>
+<text x="455" y="188.0" font-size="16" fill="#64748b" font-weight="400">C0</text>
+<text x="507.0" y="430" font-size="16" fill="#64748b" font-weight="400">C0</text>
+<rect x="475" y="150" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="539" y="150" width="64" height="64" rx="0" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+<rect x="603" y="150" width="64" height="64" rx="0" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+<rect x="667" y="150" width="64" height="64" rx="0" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+<text x="455" y="252.0" font-size="16" fill="#64748b" font-weight="400">C1</text>
+<text x="571.0" y="430" font-size="16" fill="#64748b" font-weight="400">C1</text>
+<rect x="475" y="214" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="539" y="214" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="603" y="214" width="64" height="64" rx="0" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+<rect x="667" y="214" width="64" height="64" rx="0" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+<text x="455" y="316.0" font-size="16" fill="#64748b" font-weight="400">C2</text>
+<text x="635.0" y="430" font-size="16" fill="#64748b" font-weight="400">C2</text>
+<rect x="475" y="278" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="539" y="278" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="603" y="278" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="667" y="278" width="64" height="64" rx="0" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+<text x="455" y="380.0" font-size="16" fill="#64748b" font-weight="400">C3</text>
+<text x="699.0" y="430" font-size="16" fill="#64748b" font-weight="400">C3</text>
+<rect x="475" y="342" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="539" y="342" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="603" y="342" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="667" y="342" width="64" height="64" rx="0" fill="#377eb8" stroke="#ffffff" stroke-width="2"/>
+<rect x="475" y="150" width="256" height="256" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="400" y="470" font-size="18" fill="#64748b" font-weight="400">In the causal mask, a chunk never looks at the future, so</text>
+<text x="400" y="496" font-size="18" fill="#64748b" font-weight="400">once generated its keys and values never change.</text>
+</g></svg>

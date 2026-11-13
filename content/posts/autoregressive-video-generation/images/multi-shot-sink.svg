@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="470" viewBox="0 0 800 470" role="img" aria-labelledby="title desc">
+<title id="title">Global and shot-level attention sinks</title><desc id="desc">A ten-chunk video with a scene cut before chunk 5. While generating chunk 8, the model attends to chunk 0 as the global sink, chunk 5 as the shot sink, chunk 7 as the recent window, and chunk 8 itself.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker></defs>
+<rect width="800" height="470" fill="#fff"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#1e293b" text-anchor="middle">
+<text x="400" y="35" font-size="25" fill="#1e293b" font-weight="600">Multi-shot attention sink</text>
+<text x="400" y="64" font-size="18" fill="#64748b" font-weight="400">Scene cut before C5 · generating C8</text>
+<text x="217.0" y="120" font-size="19" fill="#1e293b" font-weight="600">Shot 1</text>
+<text x="557.0" y="120" font-size="19" fill="#1e293b" font-weight="600">Shot 2</text>
+<line x1="387.0" y1="100" x2="387.0" y2="214" stroke="#475569" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="387.0" y="236" font-size="16" fill="#64748b" font-weight="400">scene cut</text>
+<rect x="50" y="150" width="62" height="44" rx="6" fill="#edf7f0" stroke="#56856b" stroke-width="1.5"/>
+<text x="81.0" y="178.0" font-size="16" fill="#56856b" font-weight="600">C0</text>
+<text x="81.0" y="216" font-size="14" fill="#56856b" font-weight="600">global</text>
+<rect x="118" y="150" width="62" height="44" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="149.0" y="178.0" font-size="16" fill="#94a3b8" font-weight="400">C1</text>
+<rect x="186" y="150" width="62" height="44" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="217.0" y="178.0" font-size="16" fill="#94a3b8" font-weight="400">C2</text>
+<rect x="254" y="150" width="62" height="44" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="285.0" y="178.0" font-size="16" fill="#94a3b8" font-weight="400">C3</text>
+<rect x="322" y="150" width="62" height="44" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="353.0" y="178.0" font-size="16" fill="#94a3b8" font-weight="400">C4</text>
+<rect x="390" y="150" width="62" height="44" rx="6" fill="#f3effa" stroke="#7e5aa8" stroke-width="1.5"/>
+<text x="421.0" y="178.0" font-size="16" fill="#7e5aa8" font-weight="600">C5</text>
+<text x="421.0" y="216" font-size="14" fill="#7e5aa8" font-weight="600">shot</text>
+<rect x="458" y="150" width="62" height="44" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="489.0" y="178.0" font-size="16" fill="#94a3b8" font-weight="400">C6</text>
+<rect x="526" y="150" width="62" height="44" rx="6" fill="#e9f2fb" stroke="#377eb8" stroke-width="1.5"/>
+<text x="557.0" y="178.0" font-size="16" fill="#377eb8" font-weight="600">C7</text>
+<text x="557.0" y="216" font-size="14" fill="#377eb8" font-weight="600">recent</text>
+<rect x="594" y="150" width="62" height="44" rx="6" fill="#fff2dd" stroke="#cc862b" stroke-width="1.5"/>
+<text x="625.0" y="178.0" font-size="16" fill="#cc862b" font-weight="600">C8</text>
+<text x="625.0" y="216" font-size="14" fill="#cc862b" font-weight="600">new</text>
+<rect x="662" y="150" width="62" height="44" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="693.0" y="178.0" font-size="16" fill="#cbd5e1" font-weight="400">C9</text>
+<rect x="80" y="274" width="22" height="22" rx="4" fill="#edf7f0" stroke="#56856b" stroke-width="1.5"/>
+<text x="114" y="290" font-size="18" fill="#1e293b" font-weight="600" text-anchor="start">Global sink</text>
+<text x="260" y="290" font-size="17" fill="#1e293b" font-weight="400" text-anchor="start">First chunk of the video: keeps the overall identity</text>
+<rect x="80" y="320" width="22" height="22" rx="4" fill="#f3effa" stroke="#7e5aa8" stroke-width="1.5"/>
+<text x="114" y="336" font-size="18" fill="#1e293b" font-weight="600" text-anchor="start">Shot sink</text>
+<text x="260" y="336" font-size="17" fill="#1e293b" font-weight="400" text-anchor="start">First chunk of the current shot: rebound at every cut</text>
+<rect x="80" y="366" width="22" height="22" rx="4" fill="#e9f2fb" stroke="#377eb8" stroke-width="1.5"/>
+<text x="114" y="382" font-size="18" fill="#1e293b" font-weight="600" text-anchor="start">Recent window</text>
+<text x="260" y="382" font-size="17" fill="#1e293b" font-weight="400" text-anchor="start">Latest chunks: short-term motion and continuity</text>
+<text x="400" y="445" font-size="18" fill="#64748b" font-weight="400">Total attended frames stay at 32 latent frames.</text>
+</g></svg>
