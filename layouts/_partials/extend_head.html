@@ -8,3 +8,8 @@
   body { background: var(--code-bg); }
 </style>
 {{- end -}}
+
+{{- /* GoatCounter analytics: only on the deployed (production) site. */ -}}
+{{- if hugo.IsProduction }}
+<script data-goatcounter="https://yywanx.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+{{- end -}}
